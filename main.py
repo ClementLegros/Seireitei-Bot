@@ -13,6 +13,7 @@ from keep_alive import keep_alive
 
 client = discord.Client()
 
+  #Function
 def get_quote():
   responseQuote = requests.get("https://animechan.vercel.app/api/random")
   quote = json.loads(responseQuote.text)
@@ -166,6 +167,9 @@ def get_car():
 
   return car
 
+  #end Function
+
+
 @client.event
 async def on_ready():
   print('We have logged in as {0.user}'.format(client))
@@ -176,15 +180,10 @@ async def on_message(message):
   if message.author == client.user:
     return
 
-  if message.content.startswith('aurevoir'):
-    await message.channel.send('https://media.tenor.com/images/8713a584798c54be3357ca11b7da761e/tenor.gif')
-  
+  #Minecraft
   if message.content.startswith('!minecraft'):
     await message.channel.send('lesloulous.mine.fun')
   
-  if message.content.startswith('!love'):
-    await message.channel.send('Dylan est l''homme le plus beau et musclé de France')
-
   #Rocket League
 
   if message.content.startswith('!mode de jeux'):
