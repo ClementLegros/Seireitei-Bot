@@ -205,20 +205,10 @@ async def on_message(message):
   if message.content.startswith('!game'):    
     await message.channel.send(get_Game())
 
-  
-
-  #Jojo stuff
-  if message.content.startswith('star platinum'):
-    await message.channel.send('ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA')
-
-  if message.content.startswith('requiem'):
-    await message.channel.send('KOREGA REQUIEM DA')
-
   #API
 
   if message.content.startswith('!quote'):
     quote = get_quote()
-    #phrase = translator.translate(quote['quote'], dest='fr')
     await message.channel.send("Quote : "  + quote['quote'] +" Par : " + quote['character'] + " Dans l'anime : " + quote['anime'])
 
   if message.content.startswith('!joke'):
