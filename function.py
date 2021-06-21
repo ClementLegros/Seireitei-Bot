@@ -22,6 +22,16 @@ def get_joke():
 
   return(joke)
 
+#Récupère les infos des tournois Rocket league
+def get_Tournament():
+  
+  reponseTournament = requests.get('https://api.pandascore.co/rl/tournaments/running?token=q9akVhOz2xxW3kZwE1rq8HEZmzJ1XLs7ygsaj9QUNmYiU1yo2sY')
+
+  tournament = json.loads(reponseTournament.text)
+  if len(tournament) == 0:
+    return "Il n'y a pas de tournois en cours"
+  else:
+    return tournament
 
 def get_Equipe():
   listEquipe = ["Equipe 1 = Dylan, Alexis / Equipe 2 = Loris, Clément","Equipe 1 = Dylan, Loris / Equipe 2 = Alexis, Clément", "Equipe 1 = Dylan, Clément / Equipe 2 = Loris, Alexis"]

@@ -23,6 +23,9 @@ async def on_message(message):
   
   #Rocket League
 
+  if message.content.startswith('!tournament'):
+    await message.channel.send(get_Tournament())
+
   if message.content.startswith('!mode de jeux'):
     await message.channel.send(get_mode_de_jeux())
 
